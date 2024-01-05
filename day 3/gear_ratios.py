@@ -73,6 +73,13 @@ def sum_gear_ratios(engine_lines):
     return total
 
 
+
+"""
+...*2435
+..2134..
+"""
+
+
 if __name__ == "__main__":
     with open("input.txt") as data:
         print(sum_engine_parts(data.readlines()))
