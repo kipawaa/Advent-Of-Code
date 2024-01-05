@@ -49,10 +49,6 @@ def sum_engine_parts(engine_lines):
 
 def sum_gear_ratios(engine_lines):
     # clean the lines and make them a grid
-    # we add an extra '.' at the end of each line since we are using
-    # if ... else and resetting after each line, meaning that
-    # part numbers at the end of a line will trigger the if part
-    # and not get totalled since that requires the else
     engine = [line.strip() for line in engine_lines]
 
     # accumulate the gear ratios
