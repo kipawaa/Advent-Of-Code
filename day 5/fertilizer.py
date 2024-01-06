@@ -55,7 +55,10 @@ def get_min_location_from_range(almanac):
                 # if this mapping range falls inside the seed range
                 if seed_ranges[s][0] <= source <= seed_ranges[s][0] + seed_ranges[s][1]:
                     # preserve the unmapped part of the interval
-                    mapped_seed_ranges.append((seed_ranges[s][0], source - seed_ranges[s][0]))
+                    if seed_ranges[s][0] != source:
+                        # this could still be mapped by some part of this section of the almanac,
+                        # so we need to keep it in seed_ranges
+                        seed_ranges[s] = (seed_ranges[s][0], source - seed_ranges[s][0])
 
                     # map the part of the interval that lies in the mapped portion
                     if seed_ranges[s][1] <= source + length:
